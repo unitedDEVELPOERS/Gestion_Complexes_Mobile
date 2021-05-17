@@ -1,0 +1,87 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package gui.user;
+
+import com.codename1.ui.Container;
+import com.codename1.ui.FontImage;
+import com.codename1.ui.Form;
+import com.codename1.ui.Image;
+import com.codename1.ui.Label;
+import com.codename1.ui.Toolbar;
+import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.util.Resources;
+import entities.Competition;
+import entities.Utilisateur;
+import gui.Competition.AjoutComp;
+/**
+ *
+ * @author sahar
+ */
+public class HomeAdmin extends Form{
+    
+     public Utilisateur utilisateur=new Utilisateur();
+      public  Competition competition=new Competition();
+
+    public HomeAdmin(Resources res ){
+      
+      Toolbar tb =new Toolbar(true);
+        setToolbar(tb);
+        setTitle("Acceuil");
+      
+      
+        Image icon = res.getImage("admin.png");
+      Container topBar = BorderLayout.centerCenter(new Label(icon));
+Label l= new Label("Bonjour mr le joueur");
+      
+      topBar.add(BorderLayout.SOUTH,l);
+      tb.addComponentToSideMenu(topBar);
+        
+        tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {}); 
+        tb.addMaterialCommandToSideMenu("Propriétaire de complexe", FontImage.MATERIAL_SUPERVISED_USER_CIRCLE, e -> {});
+        tb.addMaterialCommandToSideMenu("Competition", FontImage.MATERIAL_EMOJI_EVENTS, e -> {AjoutComp c=new AjoutComp(res);
+                      c.show();
+        });
+        tb.addMaterialCommandToSideMenu("Store", FontImage.MATERIAL_ADD_SHOPPING_CART, e -> {});
+
+         tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_ACCOUNT_CIRCLE, e -> {CompteClient h=  new CompteClient(res);
+                       h.setUtilisateur(getUtilisateur(),res);
+                        h.show();});
+
+        tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_LOGOUT, e -> {
+            Authentification h=  new Authentification(res);
+             
+            
+            
+            h.show();});
+
+        
+    }
+
+    public Utilisateur getUtilisateur() {
+        return utilisateur;
+    }
+
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+          setTitle(" Welcome, "+utilisateur.getNom()); 
+        setLayout(BoxLayout.y());
+    }
+
+    public Competition getCompetition() {
+        return competition;
+    }
+
+    public void setCompetition(Competition competition) {
+        this.competition = competition;
+         setTitle(" Welcome, "+competition.getDesignation()); 
+        setLayout(BoxLayout.y());
+    }
+    
+    
+    
+    
+}
