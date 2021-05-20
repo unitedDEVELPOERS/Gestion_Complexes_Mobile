@@ -24,6 +24,7 @@ import com.codename1.ui.util.Resources;
 import entities.Categorie;
 import entities.Terrain;
 import entities.Utilisateur;
+import gui.user.HomeProp;
 import java.io.IOException;
 import java.util.ArrayList;
 import services.ServiceCategorie;
@@ -123,6 +124,8 @@ public class ModifierTerrain extends Form{
                       if( ServiceTerrain.getInstance().updateTerrain(tr))
                       {
                             Dialog.show("Succes","Terrain modifié avec succes",new Command("OK"));
+                            HomeProp hp = new HomeProp(theme);
+                            hp.show();
                       }
                             else
                             Dialog.show("ERROR", "Server error", new Command("OK"));

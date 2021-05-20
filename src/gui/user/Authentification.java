@@ -17,11 +17,12 @@ import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
-
+import com.codename1.ui.Image;
 import entities.Utilisateur;
 import gui.categorie.GestionCategorie;
 import gui.terrain.Accueil;
 import java.util.ArrayList;
+import javafx.scene.layout.BackgroundImage;
 import services.ServiceUsers;
 
 /**
@@ -34,10 +35,208 @@ public class Authentification extends Form {
    
    public Authentification(Resources res){
        current=this;
-       setTitle("Authentification");
-       setLayout(BoxLayout.y());
-  
       
+       setLayout(BoxLayout.y());
+        
+       current.setUIID("WithBackground");
+     current.getUnselectedStyle().setBgImage(res.getImage("background.jpg"));
+
+       
+      add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+        
+       
+       
+       
+       
+       
        add(new Label("Email"));
          TextField email=new TextField("","Votre email",20, TextField.EMAILADDR);
          email.setSingleLineTextArea(false);
@@ -48,8 +247,19 @@ public class Authentification extends Form {
           add(mdp);
         Button login=new Button("Login");
         Button inscrit=new Button("Inscrivez-vous");
+         Button mdpO=new Button("Mot de passe oublié?");
         addAll(login,inscrit);
+        add(mdpO);
         
+         mdpO.addActionListener(new ActionListener(){
+             @Override
+             public void actionPerformed(ActionEvent evt) {
+                 
+                 MotDePasse u=new MotDePasse(res);
+                 u.show();
+                 
+             }
+         });
         
               login.addActionListener(new ActionListener(){
              @Override

@@ -86,7 +86,12 @@ public class ServiceReservation {
                 r.setId((int)id);                
                 r.setDate_reservation(obj.get("dateReservation").toString());
                 r.setHeure(obj.get("heure").toString());
-       
+                
+                if(obj.get("validee")=="true")
+                    r.setValidee(true);
+                else 
+                    r.setValidee(false);
+                System.out.println(r.isValidee());
                 reservations.add(r);
             }
             
@@ -139,6 +144,23 @@ public class ServiceReservation {
          NetworkManager.getInstance().addToQueueAndWait(req);
       return reservation;
   }
+    
+    
+    public boolean confirmer(Reservation r) {
+       
+        String url = Statics.BASE_URL + "/ConfirmerJson/" +r.getId();
+        req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this); 
+                
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+    }
   
 
 }

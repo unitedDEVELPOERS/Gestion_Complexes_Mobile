@@ -75,7 +75,7 @@ ArrayList<Terrain> tr = new ArrayList<>();
     
     
     public Container addItemTerrain(Terrain t){
-         Container cnt = new Container(BoxLayout.y());
+        Container cnt = new Container(BoxLayout.y());
        
         Label lbDesignation = new Label(t.getDesignation());
         lbDesignation.getAllStyles().setFgColor(CENTER);

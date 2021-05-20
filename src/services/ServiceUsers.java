@@ -222,7 +222,31 @@ public class ServiceUsers {
       
       return resultOK;
   }
-       
+  
+        public boolean UpdateMdp1(String email,String pwd){
+             
+       String url = Statics.BASE_URL+"/UpdateMdpp/"+email+"/"+pwd;
+             req.setUrl(url);
+            req.addResponseListener(new ActionListener<NetworkEvent>(){
+                 @Override
+                 public void actionPerformed(NetworkEvent evt) {
+                  resultOK=req.getResponseCode()==200;
+                    req.removeResponseListener(this);
+                    
+                 }
+           
+       });
+      
+      
+       NetworkManager.getInstance().addToQueueAndWait(req);
+      
+      return resultOK;
+  }
+        
+        
+        
+        
+        
 
     public Utilisateur getUtilisateur() {
         return utilisateur;

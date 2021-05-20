@@ -14,6 +14,7 @@ import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
+import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
@@ -27,8 +28,14 @@ import services.ServiceUsers;
 public class Inscription extends Form{
     Form current;
     public Inscription(Form previous,Resources res){
+        current=this;
+      
+       setLayout(BoxLayout.y());
         
-         setTitle("Inscrivez-vous");   
+       current.setUIID("WithBackground");
+     current.getUnselectedStyle().setBgImage(res.getImage("background.jpg"));
+
+          
          
           
          add(new Label("Email"));
@@ -65,9 +72,18 @@ public class Inscription extends Form{
          
 
          Button ajouter=new Button("Ajouter");
-         Button annuler=new Button("Annuler");
+         Button annuler=new Button("Login");
          addAll(ajouter,annuler);
          
+         annuler.addActionListener(new ActionListener(){
+             @Override
+             public void actionPerformed(ActionEvent evt) {
+                 
+                  Authentification s=new Authentification(res);
+                        s.show();
+             }
+         });
+             
          ajouter.addActionListener(new ActionListener(){
              @Override
              public void actionPerformed(ActionEvent evt) {
@@ -105,7 +121,7 @@ public class Inscription extends Form{
              }
              
          });
-           getToolbar().addMaterialCommandToLeftBar("",FontImage.MATERIAL_ARROW_BACK,e->previous.showBack());
+          // getToolbar().addMaterialCommandToLeftBar("",FontImage.MATERIAL_ARROW_BACK,e->previous.showBack());
 
     }
 

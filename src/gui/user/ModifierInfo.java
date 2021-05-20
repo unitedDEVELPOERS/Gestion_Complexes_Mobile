@@ -18,12 +18,14 @@ import com.codename1.ui.Toolbar;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
+import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.GridBagConstraints;
 import com.codename1.ui.layouts.GridBagLayout;
 import com.codename1.ui.util.Resources;
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
 import entities.Utilisateur;
+import gui.Equipe.AddEquipeForm;
 import services.ServiceUsers;
 
 /**
@@ -38,6 +40,8 @@ public class ModifierInfo extends Form {
 
         Toolbar tb =new Toolbar(true);
         setToolbar(tb);
+         setLayout(BoxLayout.y());
+        
          add (new Label(""));
          add (new Label(""));
          add (new Label(""));
@@ -47,6 +51,14 @@ public class ModifierInfo extends Form {
          add (new Label(""));
          add (new Label(""));
          add (new Label(""));
+          add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         
         setTitle("Acceuil");
         Image icon = res.getImage("joueur.png");
       Container topBar = BorderLayout.centerCenter(new Label(icon));
@@ -55,8 +67,17 @@ public class ModifierInfo extends Form {
       topBar.add(BorderLayout.SOUTH,l);
       tb.addComponentToSideMenu(topBar);
         
-        tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {}); 
-        tb.addMaterialCommandToSideMenu("Equipe", FontImage.MATERIAL_GROUP, e -> {});
+        tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {
+             HomeForm h=  new HomeForm(res);
+
+        h.setUtilisateur(getUtilisateur());
+                        h.show();
+        }); 
+        tb.addMaterialCommandToSideMenu("Equipe", FontImage.MATERIAL_GROUP, e -> {
+        AddEquipeForm h=  new AddEquipeForm(res);
+
+        h.setUser(getUtilisateur());
+                        h.show();});
         tb.addMaterialCommandToSideMenu("Réservations", FontImage.MATERIAL_BOOKMARK_OUTLINE, e -> {});
         tb.addMaterialCommandToSideMenu("Competition", FontImage.MATERIAL_EMOJI_EVENTS, e -> {});
         tb.addMaterialCommandToSideMenu("Store", FontImage.MATERIAL_ADD_SHOPPING_CART, e -> {});
@@ -79,6 +100,170 @@ public class ModifierInfo extends Form {
     
     
     public void mod(Utilisateur user,Resources res){
+        
+        
+          add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+       
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+         add (new Label(""));
+     
+        
        
        GridBagLayout gb = new GridBagLayout();
 
@@ -142,6 +327,9 @@ public class ModifierInfo extends Form {
                      
                       if (new ServiceUsers().UpdateUser(e)){
                             Dialog.show("Success","User Modified", new Command("OK"));
+                             CompteClient h=  new CompteClient(res);
+                       h.setUtilisateur(getUtilisateur(),res);
+                        h.show();
                       }else{
                             Dialog.show("ERROR","Server Error", new Command("OK"));
                       }

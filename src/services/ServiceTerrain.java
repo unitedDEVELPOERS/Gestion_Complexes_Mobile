@@ -121,7 +121,7 @@ public class ServiceTerrain {
                 //t.setComplexe((Utilisateur)obj.get("complexe"));
                
                 t.setCategorie(ServiceCategorie.getInstance().AfficheCat(Integer.parseInt(obj.get("categorie").toString().substring(4, 5))));
-                System.out.println(t.getCategorie());
+                
                
                t.setVille(obj.get("ville").toString());
                 

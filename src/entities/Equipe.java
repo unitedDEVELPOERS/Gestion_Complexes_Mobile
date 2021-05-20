@@ -25,11 +25,11 @@ public class Equipe {
         this.logo=logo;
         this.capitain=capitain;
     }
- public Equipe(String nom,int nbre_joueur ,String logo,Utilisateur capitain){
+ public Equipe(String nom,int nbre_joueur ,Utilisateur capitain){
         
         this.nom=nom;
         this.nbre_joueur=nbre_joueur;
-        this.logo=logo;
+       
         this.capitain=capitain;
     }
  public Equipe(String nom,int nbre_joueur ){
@@ -38,6 +38,7 @@ public class Equipe {
         this.nbre_joueur=nbre_joueur;
        
     }
+
 
     public int getId() {
         return id;

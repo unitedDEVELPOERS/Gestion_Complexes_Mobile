@@ -15,9 +15,6 @@ import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import entities.Utilisateur;
-import gui.Equipe.ListEquipeForm;
-import gui.terrain.AjouterTerrain;
-import gui.terrain.ListeTerrains;
 
 /**
  *
@@ -25,9 +22,9 @@ import gui.terrain.ListeTerrains;
  */
 public class HomeProp extends Form {
      public Utilisateur utilisateur=new Utilisateur();
- Form current;
+    
     public HomeProp(Resources res ){
-      current=this;
+      
       Toolbar tb =new Toolbar(true);
         setToolbar(tb);
         setTitle("Acceuil");
@@ -41,9 +38,8 @@ public class HomeProp extends Form {
       tb.addComponentToSideMenu(topBar);
         
         tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {}); 
-       // tb.addMaterialCommandToSideMenu("Nouveau terrain", FontImage.MATERIAL_TERRAIN, e -> {new AjouterTerrain(utilisateur).show();});
-        tb.addMaterialCommandToSideMenu("Liste des terrains", FontImage.MATERIAL_TERRAIN, e -> {new ListeTerrains(current, utilisateur).show();});
-        tb.addMaterialCommandToSideMenu("Réservations", FontImage.MATERIAL_BOOKMARK_OUTLINE, e -> {new ListEquipeForm(current).show();});
+        tb.addMaterialCommandToSideMenu("Terrains", FontImage.MATERIAL_TERRAIN, e -> {});
+        tb.addMaterialCommandToSideMenu("Réservations", FontImage.MATERIAL_BOOKMARK_OUTLINE, e -> {});
         tb.addMaterialCommandToSideMenu("Competition", FontImage.MATERIAL_EMOJI_EVENTS, e -> {});
         tb.addMaterialCommandToSideMenu("Arbtitres", FontImage.MATERIAL_SUPERVISED_USER_CIRCLE, e -> {});
         tb.addMaterialCommandToSideMenu("Store", FontImage.MATERIAL_ADD_SHOPPING_CART, e -> {});

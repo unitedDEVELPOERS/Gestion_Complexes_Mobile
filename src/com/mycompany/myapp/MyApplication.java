@@ -15,7 +15,6 @@ import com.codename1.ui.Toolbar;
 import java.io.IOException;
 
 import com.codename1.io.NetworkManager;
-import gui.Equipe.EquipeForm;
 import gui.Equipe.ListEquipeForm;
 import gui.categorie.AfficheUneCategorie;
 import gui.categorie.AjouterCategorie;

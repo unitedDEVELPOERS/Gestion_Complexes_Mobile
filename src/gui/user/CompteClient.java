@@ -25,6 +25,7 @@ import com.codename1.ui.layouts.GridBagLayout;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.MyApplication;
 import entities.Utilisateur;
+import gui.Equipe.AddEquipeForm;
 
 /**
  *
@@ -55,8 +56,17 @@ public class CompteClient extends Form{
       topBar.add(BorderLayout.SOUTH,l);
       tb.addComponentToSideMenu(topBar);
         
-        tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {}); 
-        tb.addMaterialCommandToSideMenu("Equipe", FontImage.MATERIAL_GROUP, e -> {});
+       tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {
+             HomeForm h=  new HomeForm(res);
+
+        h.setUtilisateur(getUtilisateur());
+                        h.show();
+        }); 
+        tb.addMaterialCommandToSideMenu("Equipe", FontImage.MATERIAL_GROUP, e -> {
+        AddEquipeForm h=  new AddEquipeForm(res);
+
+        h.setUser(getUtilisateur());
+                        h.show();});
         tb.addMaterialCommandToSideMenu("Réservations", FontImage.MATERIAL_BOOKMARK_OUTLINE, e -> {});
         tb.addMaterialCommandToSideMenu("Competition", FontImage.MATERIAL_EMOJI_EVENTS, e -> {});
         tb.addMaterialCommandToSideMenu("Store", FontImage.MATERIAL_ADD_SHOPPING_CART, e -> {});
@@ -217,7 +227,7 @@ public class CompteClient extends Form{
     
          
         
-     TextField email =new TextField("",user.getEmail(),20,TextField.EMAILADDR);
+     TextField email =new TextField(user.getEmail(),"",20,TextField.EMAILADDR);
      email.setEditable(false);
      
         //add(new  FloatingHint(nom));
@@ -250,7 +260,7 @@ public class CompteClient extends Form{
         
         
         
-     TextField nom =new TextField("",user.getNom());
+     TextField nom =new TextField(user.getNom(),"");
      nom.setEditable(false);
      
         //add(new  FloatingHint(nom));
@@ -260,14 +270,14 @@ public class CompteClient extends Form{
      
      
    
-     TextField prenom =new TextField("",user.getPrenom());
+     TextField prenom =new TextField(user.getPrenom(),"");
      prenom.setEditable(false);
      
         //add(new  FloatingHint(nom));
         add(prenom);
         
         
-          TextField tel =new TextField("",user.getTel(),20,TextField.PHONENUMBER);
+          TextField tel =new TextField(user.getTel(),"",20,TextField.PHONENUMBER);
      tel.setEditable(false);
      
         //add(new  FloatingHint(nom));
@@ -283,7 +293,7 @@ public class CompteClient extends Form{
          */
         
         
-         TextField position =new TextField("",user.getPosition());
+         TextField position =new TextField(user.getPosition(),"");
      position.setEditable(false);
      
         //add(new  FloatingHint(nom));

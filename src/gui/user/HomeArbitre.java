@@ -34,8 +34,8 @@ public class HomeArbitre extends Form{
       Container topBar = BorderLayout.centerCenter(new Label(icon));
 Label l= new Label("Bonjour mr l'arbitre");
       
-      topBar.add(BorderLayout.SOUTH,l);
-      tb.addComponentToSideMenu(topBar);
+        topBar.add(BorderLayout.SOUTH,l);
+        tb.addComponentToSideMenu(topBar);
         
         tb.addMaterialCommandToSideMenu("Home", FontImage.MATERIAL_HOME, e -> {}); 
         tb.addMaterialCommandToSideMenu("Pénalité", FontImage.MATERIAL_HOW_TO_VOTE, e -> {});

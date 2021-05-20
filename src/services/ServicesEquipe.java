@@ -44,7 +44,7 @@ public class ServicesEquipe {
         }return instance;
     }
     public boolean addEquipe(Equipe e){
-       String url =Statics.BASE_URL+"/AddEquipe/"+e.getNom()+"/"+e.getNbre_joueur();
+       String url =Statics.BASE_URL+"/AddEquipe/"+e.getNom()+"/"+e.getNbre_joueur()+"/"+e.getCapitain().getId();
          
        
          req.setUrl(url);
@@ -86,6 +86,20 @@ public class ServicesEquipe {
 
        public ArrayList<Equipe> getAllEquips(){
         String url = Statics.BASE_URL+"/AllEquipe";
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                Equips = parseEquips(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return Equips;
+    }
+        public ArrayList<Equipe> getOneEquips(String nom){
+        String url = Statics.BASE_URL+"/EquipeNom/"+nom;
         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
